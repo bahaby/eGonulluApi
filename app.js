@@ -7,7 +7,7 @@ app.use(morgan('short'));
 // Rotaları Çağırma
 const userRouter = require('./routes/user.js');
 const loginRouter = require('./routes/login.js');
-const updateUserRouter = require('./routes/waste.js');
+const updateUserRouter = require('./routes/update_user.js');
 const registerRouter = require('./routes/register.js');
 
 // Rotaları kullanma

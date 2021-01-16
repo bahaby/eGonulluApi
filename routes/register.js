@@ -20,7 +20,7 @@ router.post('/register', (req,res) => {
         if(rows.length==1)
             res.status(400).json({durumKodu: 400, mesaj:"Böyle bir kullanıcı daha önce kayıt olmuş"});
         else{ 
-            const queryString = "INSERT INTO User ( Tc, Name, LastName, Email, Phone, PictureUrl, Twitter, Instagram, WebSite, Facebook ) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            const queryString = "INSERT INTO User ( Tc, Name, LastName, Email, Phone, PictureUrl, Twitter, Instagram, WebSite, Facebook, Password ) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
             connection.all(queryString,[
                 req.body.Tc,
                 req.body.Name,
@@ -32,6 +32,7 @@ router.post('/register', (req,res) => {
                 req.body.Instagram,
                 req.body.WebSite,
                 req.body.Facebook,
+                req.body.Password
             ], (err,rows,fields) => {
                 if(err){
                     res.status(400).json({statusCode: 400, message:err.message});
