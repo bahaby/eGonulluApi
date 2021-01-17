@@ -43,6 +43,7 @@ router.post('/register', (req,res) => {
         }
         
         connection.close();
+        console.log("user registered");
     });
 
 });

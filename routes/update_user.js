@@ -33,6 +33,7 @@ router.post('/update_user', (req,res) => {
         res.status(201).json({statusCode:201, message: "Kullanıcı başarıyla güncellendi"});
         
         connection.close();
+        console.log("user updated");
     });
 
 });

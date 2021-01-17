@@ -16,7 +16,6 @@ router.post('/users',(req,res) => {
             res.sendStatus(500);
             res.end();
         }
-        console.log("I think we fetched users successfuly");
         res.status(200).json({ statusCode: 200,
             Id : rows[0].Id,
             Tc : rows[0].Tc,
@@ -33,6 +32,7 @@ router.post('/users',(req,res) => {
         });
     });
     connection.close();
+    console.log("User data sent");
 });
 
 module.exports = router; 

@@ -24,6 +24,7 @@ router.post('/login', (req, res) => {
             res.status(400).json({statusCode: 400, message:"Kullanıcı adı veya şifre hatalı"});
     });
     connection.close();
+    console.log("user logged in");
 });
 
 module.exports = router; 
